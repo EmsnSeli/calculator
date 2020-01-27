@@ -13,7 +13,7 @@
 .container {
     margin: auto;
     width: 400px;
-    height: 600px;
+    height: 613px;
     background-color: #3a4655;
     margin-top: 200px;
     -webkit-box-shadow: -2px 12px 55px 3px rgba(0, 0, 0, 0.75);
@@ -44,18 +44,23 @@
 
 .currentInput {
     width: 80%;
-    margin: 20px auto;
+    margin: auto;
+    height: 70px;
     color: white;
     text-align: right;
     font-size: 2em;
     font-weight: bold;
 }
 
+.currentInput p {
+    line-height: 70px;
+}
+
 
 /* all the buttons */
 
 .buttons button {
-    background-color: #404d5e;
+    background-color: #425062;
     width: 96px;
     height: 90px;
     border: none;
@@ -71,4 +76,12 @@ button,
 
 #equlasbutton {
     width: 400px;
+}
+
+.buttons .operator {
+    background-color: #404d5e;
+}
+
+.buttons button:hover {
+    background-color: rgb(180, 180, 51);
 }

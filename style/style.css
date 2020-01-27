@@ -1,5 +1,74 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-  }
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* The whole calculator*/
+
+.container {
+    margin: auto;
+    width: 400px;
+    height: 600px;
+    background-color: #3a4655;
+    margin-top: 200px;
+    -webkit-box-shadow: -2px 12px 55px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -2px 12px 55px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: -2px 12px 55px 3px rgba(0, 0, 0, 0.75);
+}
+
+
+/* The path the user did use shown at top */
+
+.currentPath {
+    text-align: right;
+    width: 80%;
+    margin: auto;
+    color: #727b86;
+    border-bottom: 2px dotted #727b86;
+    height: 70px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.currentPath p {
+    line-height: 70px;
+}
+
+
+/* what the user is currently typing */
+
+.currentInput {
+    width: 80%;
+    margin: 20px auto;
+    color: white;
+    text-align: right;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+/* all the buttons */
+
+.buttons button {
+    background-color: #404d5e;
+    width: 96px;
+    height: 90px;
+    border: none;
+    color: white;
+    font-size: 2em;
+    margin: 2px auto;
+}
+
+button,
+[type="button"] {
+    -webkit-appearance: button;
+}
+
+#equlasbutton {
+    width: 400px;
+}

@@ -5,7 +5,7 @@ let numberButtons = document.querySelectorAll("button:not(.operator):not(#equlas
 let commabutton = document.querySelector(".comma");
 
 //get p of path writing
-let pCurrPath = document.querySelector(".currentPath p");
+let pCurrPath = document.querySelector(".currentPath span");
 
 //get p of cur typing
 let pCurrTyping = document.querySelector(".currentInput p");
@@ -14,6 +14,7 @@ let operatorPressed = false;
 let currTypingValue = "";
 
 let commaPressed = false;
+let equalsPressed = false;
 
 //loop over every numberpad and add eventlistener
 numberButtons.forEach(numberButton => {
@@ -56,6 +57,7 @@ equalsButton.addEventListener("click", function() {
     let evalVal = eval(pCurrPath.textContent);
     pCurrPath.textContent += " =";
     pCurrTyping.textContent = evalVal;
+    equalsPressed = true;
 });
 
 //add comma when pressed only once

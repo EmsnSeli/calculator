@@ -73,11 +73,6 @@
     margin: 2px auto;
 }
 
-button,
-[type="button"] {
-    -webkit-appearance: button;
-}
-
 #equlasbutton {
     width: 196px;
 }

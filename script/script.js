@@ -100,9 +100,10 @@ delButton.addEventListener("click", function() {
 })
 
 //keyboard input handling
-document.addEventListener("keyup", function(e) {
+document.addEventListener("keydown", function(e) {
     switch (e.key) {
         case "Enter":
+            equalsButton.focus();
             equalsButton.click();
             break;
         case ".":

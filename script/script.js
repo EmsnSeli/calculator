@@ -13,8 +13,11 @@ let pCurrTyping = document.querySelector(".currentInput p");
 let operatorPressed = false;
 let currTypingValue = "";
 
+let commaPressed = false;
+
+//loop over every numberpad and add eventlistener
 numberButtons.forEach(numberButton => {
-    numberButton.addEventListener("click", function () {
+    numberButton.addEventListener("click", function() {
         if (pCurrTyping.textContent.length < 11) {
             if (operatorPressed) {
                 pCurrTyping.textContent = "";
@@ -27,17 +30,18 @@ numberButtons.forEach(numberButton => {
     })
 });
 
+//loop over every operator and add click eventlistener 
 operators.forEach(operator => {
-    operator.addEventListener("click", function () {
-        if(!pCurrTyping.textContent) return;
-        pCurrPath.textContent += currTypingValue + operator.value;
+    operator.addEventListener("click", function() {
+        if (!pCurrTyping.textContent) return;
+        pCurrPath.textContent += currTypingValue + " " + operator.value + " ";
         operatorPressed = true;
-        operatorValue = operator.value;
+        commaPressed = false;
         console.log(operator.className + operator.value);
     })
 });
 
-//operator functions
+//operator functions --> maybe not needed
 let add = (a, b) => a + b;
 let subtract = (a, b) => a - b;
 let divide = (a, b) => {
@@ -45,3 +49,18 @@ let divide = (a, b) => {
     return a / b;
 }
 let multiply = (a, b) => a * b;
+
+//when equals button is pressed resolve the equation
+equalsButton.addEventListener("click", function() {
+    pCurrPath.textContent += currTypingValue;
+    let evalVal = eval(pCurrPath.textContent);
+    pCurrPath.textContent += " =";
+    pCurrTyping.textContent = evalVal;
+});
+
+//add comma when pressed only once
+commabutton.addEventListener("click", function() {
+    if (commaPressed) return;
+    commaPressed = true;
+    pCurrTyping.textContent += ".";
+})

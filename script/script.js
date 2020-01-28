@@ -1,7 +1,7 @@
 //getting all the buttons
 let operators = document.querySelectorAll(".operator");
-let equalsButton = document.querySelector("#equlasbutton");
 let numberButtons = document.querySelectorAll("button:not(.operator):not(#equlasbutton):not(.clearbutton):not(.comma)");
+let equalsButton = document.querySelector("#equlasbutton");
 let commabutton = document.querySelector(".comma");
 let clearButton = document.querySelector(".clearbutton");
 let delButton = document.querySelector("#backspace");
@@ -97,4 +97,37 @@ clearButton.addEventListener("click", function() {
 delButton.addEventListener("click", function() {
     if (pCurrTyping.textContent.length > 0)
         pCurrTyping.textContent = pCurrTyping.textContent.slice(0, -1);
+})
+
+//keyboard input handling
+document.addEventListener("keyup", function(e) {
+    switch (e.key) {
+        case "Enter":
+            equalsButton.click();
+            break;
+        case ".":
+            commabutton.click();
+            break;
+        case "Backspace":
+            delButton.click();
+            break;
+        case "Delete":
+            clearButton.click();
+            break;
+        default:
+            break;
+    }
+    numberButtons.forEach(numberButton => {
+        if (numberButton.value == e.key) {
+            numberButton.click();
+            return;
+        }
+    });
+    operators.forEach(operator => {
+        if (operator.value == e.key) {
+            operator.click();
+            return;
+        }
+    });
+
 })

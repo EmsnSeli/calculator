@@ -48,7 +48,11 @@ operators.forEach(operator => {
     operator.addEventListener("click", function() {
         if (equalsPressed) return;
         if (!pCurrTyping.textContent) return;
-        pCurrPath.textContent += currTypingValue + " " + operator.value + " ";
+        if (operatorPressed) {
+            pCurrPath.textContent = pCurrPath.textContent.slice(0, -2);
+            pCurrPath.textContent += operator.value + " ";
+        } else
+            pCurrPath.textContent += currTypingValue + " " + operator.value + " ";
         operatorPressed = true;
         commaPressed = false;
     })
